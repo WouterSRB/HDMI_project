@@ -19,8 +19,38 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module PixelOutput(
+input Pixel_clk,//25Mhz
+input TDMS_clk,//250Mhz
+
+output reg [7:0] red,blue,green,
+output reg hSync, vSync, DrawArea//DrawArea == VDE
 
     );
+    
+      reg [9:0] counterH=10'b0000000000;//10 bit counter so can count up to 1024.
+      reg [9:0] counterV=10'b0000000000;
+
+    initial begin
+        red = 8'b11111111;
+        blue=8'b00000000;
+        green=8'b00000000;
+    end
+    
+    always@(posedge Pixel_clk)begin
+       counterH = counterH + 1;
+       if(counterH==800)begin
+            counterV=counterV+1;
+       end
+       
+       
+        
+    end
+    
+    
+    
+    
+    
+    
+    
 endmodule
