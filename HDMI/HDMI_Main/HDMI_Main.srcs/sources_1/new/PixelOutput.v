@@ -30,27 +30,37 @@ output reg hSync, vSync, DrawArea//DrawArea == VDE
     
       reg [9:0] counterH=10'b0000000000;//10 bit counter so can count up to 1024.
       reg [9:0] counterV=10'b0000000000;
-
+      
     initial begin
-        red = 8'b11111111;
+        red=8'b00000000;
         blue=8'b00000000;
         green=8'b00000000;
     end
     
     always@(posedge Pixel_clk)begin
-       counterH = counterH + 1;
-       if(counterH==800)begin
+        red=8'b00000000;
+        blue=8'b00000000;
+        green=8'b00000000;
+        hSync=0;
+        vSync=0;
+        DrawArea=0;
+        counterH = counterH + 1;
+        if((counterH<=640)&&(counterV<=480))begin
+            red=8'b11111111;
+            DrawArea=1; 
+        end
+        if((counterH>(640+16))&&(counterH<=(640+16+96)))begin
+            hSync=1;
+        end
+        else if((counterV>(480+10))&&(counterV<=(480+10+2)))begin
+            vSync=1;
+        end
+        else if(counterH==800)begin
+            counterH=0;
             counterV=counterV+1;
-       end
-       
-       
-        
-    end
-    
-    
-    
-    
-    
-    
-    
+            if(counterV==525)begin
+                counterV=0;
+            end
+        end                
+    end   
 endmodule
