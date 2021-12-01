@@ -1,0 +1,304 @@
+
+*** Running vivado
+    with args -log block_diagram_HDMI_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source block_diagram_HDMI_wrapper.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source block_diagram_HDMI_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 268.980 ; gain = 38.336
+Command: synth_design -top block_diagram_HDMI_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10024 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 372.797 ; gain = 99.324
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'block_diagram_HDMI_wrapper' [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/hdl/block_diagram_HDMI_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'block_diagram_HDMI' [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/synth/block_diagram_HDMI.v:13]
+INFO: [Synth 8-6157] synthesizing module 'block_diagram_HDMI_HDMI_TMDS_0_0' [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/.Xil/Vivado-1984-LAPTOP-WOUTER-F4OMEN/realtime/block_diagram_HDMI_HDMI_TMDS_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'block_diagram_HDMI_HDMI_TMDS_0_0' (1#1) [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/.Xil/Vivado-1984-LAPTOP-WOUTER-F4OMEN/realtime/block_diagram_HDMI_HDMI_TMDS_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'block_diagram_HDMI_PixelOutput_0_0' [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/.Xil/Vivado-1984-LAPTOP-WOUTER-F4OMEN/realtime/block_diagram_HDMI_PixelOutput_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'block_diagram_HDMI_PixelOutput_0_0' (2#1) [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/.Xil/Vivado-1984-LAPTOP-WOUTER-F4OMEN/realtime/block_diagram_HDMI_PixelOutput_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'block_diagram_HDMI_clk_wiz_0_0' [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/.Xil/Vivado-1984-LAPTOP-WOUTER-F4OMEN/realtime/block_diagram_HDMI_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'block_diagram_HDMI_clk_wiz_0_0' (3#1) [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/.Xil/Vivado-1984-LAPTOP-WOUTER-F4OMEN/realtime/block_diagram_HDMI_clk_wiz_0_0_stub.v:5]
+WARNING: [Synth 8-350] instance 'clk_wiz_0' of module 'block_diagram_HDMI_clk_wiz_0_0' requires 5 connections, but only 4 given [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/synth/block_diagram_HDMI.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'block_diagram_HDMI' (4#1) [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/synth/block_diagram_HDMI.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'block_diagram_HDMI_wrapper' (5#1) [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/hdl/block_diagram_HDMI_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 427.625 ; gain = 154.152
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 427.625 ; gain = 154.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 427.625 ; gain = 154.152
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_PixelOutput_0_0/block_diagram_HDMI_PixelOutput_0_0/block_diagram_HDMI_PixelOutput_0_0_in_context.xdc] for cell 'block_diagram_HDMI_i/PixelOutput_0'
+Finished Parsing XDC File [c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_PixelOutput_0_0/block_diagram_HDMI_PixelOutput_0_0/block_diagram_HDMI_PixelOutput_0_0_in_context.xdc] for cell 'block_diagram_HDMI_i/PixelOutput_0'
+Parsing XDC File [c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc] for cell 'block_diagram_HDMI_i/HDMI_TMDS_0'
+Finished Parsing XDC File [c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc] for cell 'block_diagram_HDMI_i/HDMI_TMDS_0'
+Parsing XDC File [c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_clk_wiz_0_0/block_diagram_HDMI_clk_wiz_0_0/block_diagram_HDMI_clk_wiz_0_0_in_context.xdc] for cell 'block_diagram_HDMI_i/clk_wiz_0'
+Finished Parsing XDC File [c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_clk_wiz_0_0/block_diagram_HDMI_clk_wiz_0_0/block_diagram_HDMI_clk_wiz_0_0_in_context.xdc] for cell 'block_diagram_HDMI_i/clk_wiz_0'
+Parsing XDC File [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/constrs_1/new/constrtaints_HDMI.xdc]
+Finished Parsing XDC File [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/constrs_1/new/constrtaints_HDMI.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/constrs_1/new/constrtaints_HDMI.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/block_diagram_HDMI_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/block_diagram_HDMI_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 719.668 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 719.668 ; gain = 446.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 719.668 ; gain = 446.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for TMDSn[0]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDSn[0]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDSn[1]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDSn[1]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDSn[2]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDSn[2]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDSn_clock. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDSn_clock. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDSp[0]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDSp[0]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDSp[1]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 11).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDSp[1]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDSp[2]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 13).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDSp[2]. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDSp_clock. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 15).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDSp_clock. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0/block_diagram_HDMI_HDMI_TMDS_0_0_in_context.xdc, line 16).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_in1. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_clk_wiz_0_0/block_diagram_HDMI_clk_wiz_0_0/block_diagram_HDMI_clk_wiz_0_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_in1. (constraint file  c:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/sources_1/bd/block_diagram_HDMI/ip/block_diagram_HDMI_clk_wiz_0_0/block_diagram_HDMI_clk_wiz_0_0/block_diagram_HDMI_clk_wiz_0_0_in_context.xdc, line 5).
+Applied set_property DONT_TOUCH = true for block_diagram_HDMI_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for block_diagram_HDMI_i/PixelOutput_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for block_diagram_HDMI_i/HDMI_TMDS_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for block_diagram_HDMI_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 719.668 ; gain = 446.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 719.668 ; gain = 446.195
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 719.668 ; gain = 446.195
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'block_diagram_HDMI_i/clk_wiz_0/Pixel_clk' to pin 'block_diagram_HDMI_i/clk_wiz_0/bbstub_Pixel_clk/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'block_diagram_HDMI_i/clk_wiz_0/TDMS_clk' to pin 'block_diagram_HDMI_i/clk_wiz_0/bbstub_TDMS_clk/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 772.777 ; gain = 499.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 772.777 ; gain = 499.305
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 772.777 ; gain = 499.305
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 773.902 ; gain = 500.430
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 773.902 ; gain = 500.430
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 773.902 ; gain = 500.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 773.902 ; gain = 500.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 773.902 ; gain = 500.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 773.902 ; gain = 500.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------------------------+----------+
+|      |BlackBox name                      |Instances |
++------+-----------------------------------+----------+
+|1     |block_diagram_HDMI_HDMI_TMDS_0_0   |         1|
+|2     |block_diagram_HDMI_PixelOutput_0_0 |         1|
+|3     |block_diagram_HDMI_clk_wiz_0_0     |         1|
++------+-----------------------------------+----------+
+
+Report Cell Usage: 
++------+-----------------------------------+------+
+|      |Cell                               |Count |
++------+-----------------------------------+------+
+|1     |block_diagram_HDMI_HDMI_TMDS_0_0   |     1|
+|2     |block_diagram_HDMI_PixelOutput_0_0 |     1|
+|3     |block_diagram_HDMI_clk_wiz_0_0     |     1|
++------+-----------------------------------+------+
+
+Report Instance Areas: 
++------+-----------------------+-------------------+------+
+|      |Instance               |Module             |Cells |
++------+-----------------------+-------------------+------+
+|1     |top                    |                   |    38|
+|2     |  block_diagram_HDMI_i |block_diagram_HDMI |    38|
++------+-----------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 773.902 ; gain = 500.430
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 773.922 ; gain = 208.406
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 773.922 ; gain = 500.449
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+26 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 799.199 ; gain = 530.219
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/synth_1/block_diagram_HDMI_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file block_diagram_HDMI_wrapper_utilization_synth.rpt -pb block_diagram_HDMI_wrapper_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 799.199 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  1 21:59:46 2021...

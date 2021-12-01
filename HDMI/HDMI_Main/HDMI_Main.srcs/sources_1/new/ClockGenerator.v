@@ -30,8 +30,8 @@ output TMDS_clk
     .BANDWIDTH("OPTIMIZED"),
     .CLKFBOUT_MULT_F(2.0),
     .CLKBOUT_PHASE(0.0),
-    .CLKIN1_PERIOD(8),
-    .CLKOUT1_DIVIDE(10),
+    .CLKIN1_PERIOD(8),//125Mhz => 8ns period
+    .CLKOUT1_DIVIDE(10),//(125*2)/10 = 25Mhz
     .CLKOUT2_DIVIDE(1),
     .CLKOUT0_DIVIDE_F(1.0),
     .CLKOUT0_DUTY_CYCLE(0.5),
@@ -45,72 +45,51 @@ output TMDS_clk
     .STARTUP_WAIT("FALSE")    
     )
     
-    MMCME2_BASE_INST (
-    
-    // Clock Outputs: 1-bit (each) output: User configurable clock outputs
-    
+ MMCME2_BASE_INST (
+
     .CLKOUTO(CLKOUT0),
-    
-    // 1-bit output: CLKOUTO
-    
+
     .CLKOUTOB (CLKOUT0B), // 1-bit output: Inverted CLKOUTO
     
     .CLKOUT1(MMCM_Pix_clk),
-    
-    // 1-bit output: CLKOUT1
-    
+
     .CLKOUT1B (CLKOUT1B),
-    
-    // 1-bit output: Inverted CLKOUT1
-    
+
     .CLKOUT2 (MMCM_TMDS_clk), // 1-bit output: CLKOUT2
     
     .CLKOUT2B (CLKOUT2B),
     
-    // 1-bit output: Inverted CLKOUT2
-    
-    // Feedback Clocks: 1-bit (each) output: Clock feedback ports
-    
     .CLKFBOUT (clkfb_in), // 1-bit output: Feedback clock
     .CLKFBOUTB (CLKFBOUTB), // 1-bit output: Inverted CLKFBOUT
-    
-    // Status Ports: 1-bit (each) output: MMCM status ports
-    
+
     .LOCKED (LOCKED),
-    
-    // 1-bit output: LOCK
-    
-    // Clock Inputs: 1-bit (each) input: Clock input
-    
-    .CLKIN1 (sysclock),
-    
-    // 1-bit input: Clock // Control Ports: 1-bit (each) input: MMCM control ports
-    
+
+    .CLKIN1 (sysclk),
+
     . PWRDWN (PWRDWN),
-    
-    // 1-bit input: Power-down
-    
+
     .RST (1'b0),
-    
     // 1-bit input: Reset
     
     // Feedback Clocks: 1-bit (each) input: Clock feedback ports
     .CLKFBIN(clkfb_out)
     );
 
+
+
     BUFG BUFG_CLKB(
         .o(clkfb_out),
-        .i(clkfb-out)
+        .i(clkfb_in)
     );
     
     BUFG BUFG_Pix_clk(
-        .o(MMCM_Pix_clk),
-        .i(Pix_clk)
+        .i(MMCM_Pix_clk),
+        .o(Pix_clk)
     );
     
     BUFG BUFG_TDMS(
-            .o(MMCM_TDMS_clk),
-            .i(TDMS_clk)
+            .i(MMCM_TMDS_clk),
+            .o(TMDS_clk)
         );
 
 endmodule
