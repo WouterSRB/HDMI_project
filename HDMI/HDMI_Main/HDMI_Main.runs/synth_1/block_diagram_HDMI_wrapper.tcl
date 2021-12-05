@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {HDL-1065} -limit 10000
+set_param synth.incrementalSynthesisCache C:/Users/vsoab/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-18288-LAPTOP-WOUTER-F4OMEN/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z020clg400-1
@@ -51,6 +51,9 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/constrs_1/new/constrtaints_HDMI.xdc
 set_property used_in_implementation false [get_files C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/constrs_1/new/constrtaints_HDMI.xdc]
+
+read_xdc C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/constrs_1/new/dummyfile.xdc
+set_property used_in_implementation false [get_files C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.srcs/constrs_1/new/dummyfile.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
