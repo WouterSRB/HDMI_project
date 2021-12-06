@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# HDMI_TMDS, PixelOutput
+# ClockGenerator, HDMI_TMDS, PixelOutput
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -169,11 +169,19 @@ proc create_root_design { parentCell } {
   set TMDSn_clock [ create_bd_port -dir O -type clk TMDSn_clock ]
   set TMDSp [ create_bd_port -dir O -from 2 -to 0 TMDSp ]
   set TMDSp_clock [ create_bd_port -dir O -type clk TMDSp_clock ]
-  set clk_in1 [ create_bd_port -dir I -type clk clk_in1 ]
-  set_property -dict [ list \
-   CONFIG.FREQ_HZ {125000000} \
- ] $clk_in1
+  set clk_in1 [ create_bd_port -dir I clk_in1 ]
 
+  # Create instance: ClockGenerator_0, and set properties
+  set block_name ClockGenerator
+  set block_cell_name ClockGenerator_0
+  if { [catch {set ClockGenerator_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $ClockGenerator_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: HDMI_TMDS_0, and set properties
   set block_name HDMI_TMDS
   set block_cell_name HDMI_TMDS_0
@@ -196,46 +204,20 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: clk_wiz_0, and set properties
-  set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
-  set_property -dict [ list \
-   CONFIG.CLKIN1_JITTER_PS {80.0} \
-   CONFIG.CLKIN2_JITTER_PS {133.33} \
-   CONFIG.CLKOUT1_JITTER {165.419} \
-   CONFIG.CLKOUT1_PHASE_ERROR {96.948} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {25.000} \
-   CONFIG.CLKOUT2_JITTER {104.759} \
-   CONFIG.CLKOUT2_PHASE_ERROR {96.948} \
-   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {250.000} \
-   CONFIG.CLKOUT2_USED {true} \
-   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
-   CONFIG.CLK_OUT1_PORT {Pixel_clk} \
-   CONFIG.CLK_OUT2_PORT {TDMS_clk} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
-   CONFIG.MMCM_CLKIN1_PERIOD {8.000} \
-   CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {40.000} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {4} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.NUM_OUT_CLKS {2} \
-   CONFIG.SECONDARY_SOURCE {Single_ended_clock_capable_pin} \
-   CONFIG.USE_INCLK_SWITCHOVER {false} \
- ] $clk_wiz_0
-
   # Create port connections
+  connect_bd_net -net ClockGenerator_0_Pix_clk [get_bd_pins ClockGenerator_0/Pix_clk] [get_bd_pins HDMI_TMDS_0/pixclk] [get_bd_pins PixelOutput_0/Pixel_clk]
+  connect_bd_net -net ClockGenerator_0_TMDS_clk [get_bd_pins ClockGenerator_0/TMDS_clk] [get_bd_pins HDMI_TMDS_0/clk_TMDS] [get_bd_pins PixelOutput_0/TDMS_clk]
   connect_bd_net -net HDMI_TMDS_0_TMDSn [get_bd_ports TMDSn] [get_bd_pins HDMI_TMDS_0/TMDSn]
   connect_bd_net -net HDMI_TMDS_0_TMDSn_clock [get_bd_ports TMDSn_clock] [get_bd_pins HDMI_TMDS_0/TMDSn_clock]
   connect_bd_net -net HDMI_TMDS_0_TMDSp [get_bd_ports TMDSp] [get_bd_pins HDMI_TMDS_0/TMDSp]
   connect_bd_net -net HDMI_TMDS_0_TMDSp_clock [get_bd_ports TMDSp_clock] [get_bd_pins HDMI_TMDS_0/TMDSp_clock]
-  connect_bd_net -net Net [get_bd_pins HDMI_TMDS_0/pixclk] [get_bd_pins PixelOutput_0/Pixel_clk] [get_bd_pins clk_wiz_0/Pixel_clk]
-  connect_bd_net -net Net1 [get_bd_pins HDMI_TMDS_0/clk_TMDS] [get_bd_pins PixelOutput_0/TDMS_clk] [get_bd_pins clk_wiz_0/TDMS_clk]
   connect_bd_net -net PixelOutput_0_DrawArea [get_bd_pins HDMI_TMDS_0/DrawArea] [get_bd_pins PixelOutput_0/DrawArea]
   connect_bd_net -net PixelOutput_0_blue [get_bd_pins HDMI_TMDS_0/blue] [get_bd_pins PixelOutput_0/blue]
   connect_bd_net -net PixelOutput_0_green [get_bd_pins HDMI_TMDS_0/green] [get_bd_pins PixelOutput_0/green]
   connect_bd_net -net PixelOutput_0_hSync [get_bd_pins HDMI_TMDS_0/hSync] [get_bd_pins PixelOutput_0/hSync]
   connect_bd_net -net PixelOutput_0_red [get_bd_pins HDMI_TMDS_0/red] [get_bd_pins PixelOutput_0/red]
   connect_bd_net -net PixelOutput_0_vSync [get_bd_pins HDMI_TMDS_0/vSync] [get_bd_pins PixelOutput_0/vSync]
-  connect_bd_net -net clk_in1_1 [get_bd_ports clk_in1] [get_bd_pins clk_wiz_0/clk_in1]
+  connect_bd_net -net clk_in1_1 [get_bd_ports clk_in1] [get_bd_pins ClockGenerator_0/sysclk]
 
   # Create address segments
 

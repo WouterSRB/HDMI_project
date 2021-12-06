@@ -5,7 +5,7 @@
 // 
 // Create Date: 11/29/2021 11:46:40 AM
 // Design Name: 
-// Module Name: PixelOutput
+// Module Name: ClockGenerator
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -26,14 +26,14 @@ output Pix_clk,
 output TMDS_clk
     );
     
-    MMCM2_BASE #(
+    MMCME2_BASE #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(2.0),
-    .CLKBOUT_PHASE(0.0),
+    .CLKFBOUT_MULT_F(6.0),//.CLKFBOUT_MULT_F(2.0),
+    .CLKFBOUT_PHASE(0.0),
     .CLKIN1_PERIOD(8),//125Mhz => 8ns period
-    .CLKOUT1_DIVIDE(10),//(125*2)/10 = 25Mhz
-    .CLKOUT2_DIVIDE(1),
-    .CLKOUT0_DIVIDE_F(1.0),
+    .CLKOUT1_DIVIDE(30),//(125*2)/10 = 25Mhz//10
+    .CLKOUT2_DIVIDE(3),//1
+    .CLKOUT0_DIVIDE_F(3.0),//1,0
     .CLKOUT0_DUTY_CYCLE(0.5),
     .CLKOUT1_DUTY_CYCLE(0.5),
     .CLKOUT2_DUTY_CYCLE(0.5),
@@ -41,15 +41,15 @@ output TMDS_clk
     .CLKOUT1_PHASE(0.0),
     .CLKOUT2_PHASE(0.0),
     .DIVCLK_DIVIDE(1),
-    .REF_JITTER(0.0),
+    .REF_JITTER1(0.0),
     .STARTUP_WAIT("FALSE")    
     )
     
- MMCME2_BASE_INST (
+MMCME2_BASE_INST (
 
-    .CLKOUTO(CLKOUT0),
+    .CLKOUT0(CLKOUT0),
 
-    .CLKOUTOB (CLKOUT0B), // 1-bit output: Inverted CLKOUTO
+    .CLKOUT0B (CLKOUT0B), // 1-bit output: Inverted CLKOUTO
     
     .CLKOUT1(MMCM_Pix_clk),
 
@@ -78,18 +78,18 @@ output TMDS_clk
 
 
     BUFG BUFG_CLKB(
-        .o(clkfb_out),
-        .i(clkfb_in)
+        .O(clkfb_out),
+        .I(clkfb_in)
     );
     
     BUFG BUFG_Pix_clk(
-        .i(MMCM_Pix_clk),
-        .o(Pix_clk)
+        .I(MMCM_Pix_clk),
+        .O(Pix_clk)
     );
     
     BUFG BUFG_TDMS(
-            .i(MMCM_TMDS_clk),
-            .o(TMDS_clk)
+            .I(MMCM_TMDS_clk),
+            .O(TMDS_clk)
         );
 
 endmodule

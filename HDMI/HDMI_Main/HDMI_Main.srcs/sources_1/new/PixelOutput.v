@@ -46,16 +46,17 @@ output reg hSync, vSync, DrawArea//DrawArea == VDE
         DrawArea=0;
         counterH = counterH + 1;
         if((counterH<=640)&&(counterV<=480))begin
-            red=8'b11111111;
+            //red=8'b11111111;
+            green=8'b11111111;
             DrawArea=1; 
         end
         if((counterH>(640+16))&&(counterH<=(640+16+96)))begin
             hSync=1;
         end
-        else if((counterV>(480+10))&&(counterV<=(480+10+2)))begin
+        if((counterV>(480+10))&&(counterV<=(480+10+2)))begin
             vSync=1;
         end
-        else if(counterH==800)begin
+        if(counterH==800)begin
             counterH=0;
             counterV=counterV+1;
             if(counterV==525)begin

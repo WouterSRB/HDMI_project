@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="block_diagram_HDMI" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1638392171"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1638392171"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1638392171"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1638392171"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1638789156"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1638789156"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1638789156"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1638789156"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\block_diagram_HDMI_PixelOutput_0_0\block_diagram_HDMI_PixelOutput_0_0.xci" Type="IP">
         <Instance HierarchyPath="PixelOutput_0"/>
@@ -23,14 +23,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\block_diagram_HDMI_clk_wiz_0_0\block_diagram_HDMI_clk_wiz_0_0.xci" Type="IP">
-        <Instance HierarchyPath="clk_wiz_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="synth\block_diagram_HDMI.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -40,6 +32,14 @@
       <File Name="sim\block_diagram_HDMI.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\block_diagram_HDMI_ClockGenerator_0_0\block_diagram_HDMI_ClockGenerator_0_0.xci" Type="IP">
+        <Instance HierarchyPath="ClockGenerator_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="block_diagram_HDMI_ooc.xdc" Type="XDC">

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Dec  6 12:06:22 2021
+# Process ID: 264
+# Current directory: C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/impl_1
+# Command line: vivado.exe -log block_diagram_HDMI_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source block_diagram_HDMI_wrapper.tcl -notrace
+# Log file: C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/impl_1/block_diagram_HDMI_wrapper.vdi
+# Journal file: C:/Users/vsoab/Documents/GitHub/HDMI_project/HDMI/HDMI_Main/HDMI_Main.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source block_diagram_HDMI_wrapper.tcl -notrace

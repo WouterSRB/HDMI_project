@@ -66,10 +66,10 @@ module block_diagram_HDMI_PixelOutput_0_0 (
   DrawArea
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Pixel_clk, FREQ_HZ 25000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Pixel_clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN block_diagram_HDMI_ClockGenerator_0_0_Pix_clk" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 Pixel_clk CLK" *)
 input wire Pixel_clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME TDMS_clk, FREQ_HZ 250000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME TDMS_clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN block_diagram_HDMI_ClockGenerator_0_0_TMDS_clk" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 TDMS_clk CLK" *)
 input wire TDMS_clk;
 output wire [7 : 0] red;
